@@ -1,5 +1,6 @@
 'use strict';
 const hat = require('hat')
+const bcrypt = require('bcryptjs')
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     email: {
@@ -10,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     api_key: DataTypes.STRING
   }, {
     hooks: {
+      beforeCreate: user => {
+        user.password = bcrypt.hashSync(user.password, 8)
+      },
       afterCreate: user => {
         user.api_key = hat();
     }}
