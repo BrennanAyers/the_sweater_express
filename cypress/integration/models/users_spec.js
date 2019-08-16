@@ -18,6 +18,6 @@ describe('User Model', function() {
   });
 
   it('hooks', function() {
-    ['afterCreate'].forEach(checkHookDefined(subject))
+    ['beforeCreate', 'afterCreate'].forEach(checkHookDefined(subject))
   });
 });
