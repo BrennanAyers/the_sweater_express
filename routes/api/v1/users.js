@@ -18,7 +18,7 @@ router.post('/', function(req, res, next) {
     })
   } else {
     res.setHeader('Content-Type', 'application/json')
-    res.status(409).send({message: 'Passwords do not match.'})
+    res.status(409).send(JSON.stringify({message: 'Passwords do not match.'}))
   }
 });
 
