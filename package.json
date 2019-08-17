@@ -6,15 +6,20 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "hat": "0.0.3",
+    "morgan": "^1.9.1",
     "pg": "^7.12.1",
     "sequelize": "^5.15.0",
     "sequelize-cli": "^5.5.0"
   },
   "devDependencies": {
-    "cypress": "^3.4.1"
+    "chai": "^4.2.0",
+    "cypress": "^3.4.1",
+    "sequelize-test-helpers": "^1.1.2",
+    "sinon": "^7.4.1"
   }
 }
