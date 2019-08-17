@@ -13,10 +13,9 @@ module.exports = (sequelize, DataTypes) => {
     hooks: {
       beforeCreate: user => {
         user.password = bcrypt.hashSync(user.password, 8)
-      },
-      afterCreate: user => {
-        user.api_key = hat();
-    }}
+        user.api_key = hat()
+      }
+    }
   });
   User.associate = function(models) {
     // associations can be defined here
